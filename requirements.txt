@@ -1,0 +1,31 @@
+# R packages required for the analysis
+# Install using: install.packages("package_name")
+
+# Core packages
+lme4
+isoband
+mgcv
+readxl
+
+# Data manipulation and visualization
+dplyr
+ggplot2
+tidyr
+lubridate
+
+# Modeling and diagnostics
+gratia
+DHARMa
+qgam
+mgcViz
+MASS
+nlme
+MuMIn
+
+# Model evaluation
+Metrics
+caret
+
+# Additional utilities
+gap
+lattice

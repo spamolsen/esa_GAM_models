@@ -1,0 +1,58 @@
+# R data files
+*.RData
+*.Rdata
+*.rda
+*.rds
+
+# R history
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RDataTmp
+
+# R User Profile
+.Rprofile
+
+# R workspace
+.Rproj.user/
+*.Rproj
+
+# Output files
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.tiff
+*.csv
+*.xlsx
+*.xls
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Environment files
+.Renviron
+.Renviron.*
+
+# R check files
+.Rcheck/
+
+# Temporary files
+*~
+*-
+*.swp
+*.o
+*.so
+*.dll
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
