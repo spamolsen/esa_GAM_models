@@ -19,7 +19,6 @@
 *.Rproj
 
 # Output files
-*.pdf
 *.png
 *.jpg
 *.jpeg
@@ -27,6 +26,13 @@
 *.csv
 *.xlsx
 *.xls
+
+# Allow specific diagnostic PDFs
+!pan_trap_diagnostics.pdf
+!sweep_net_diagnostics.pdf
+
+# Exclude all other PDFs
+*.pdf
 
 # Logs and databases
 *.log
