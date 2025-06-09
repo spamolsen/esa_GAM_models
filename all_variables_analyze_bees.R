@@ -512,18 +512,22 @@ cat("\n============================\n")
 cat("DHARMa Residual Diagnostics\n")
 cat("============================\n")
 
-
-# Pan Trap
-cat("\nPan Trap Model Diagnostics:\n")
+# Generate and save diagnostic plots for each model
+cat("\nGenerating Pan Trap diagnostic plots...\n")
+pdf("pan_trap_diagnostics.pdf", width = 12, height = 8)
 pan_resids <- simulateResiduals(bam_pan_allvar)
 plot(pan_resids)
 testResiduals(pan_resids)
+dev.off()
+cat("Pan Trap diagnostics saved to: pan_trap_diagnostics.pdf\n")
 
-# Sweep Net
-cat("\nSweep Net Model Diagnostics:\n")
+cat("\nGenerating Sweep Net diagnostic plots...\n")
+pdf("sweep_net_diagnostics.pdf", width = 12, height = 8)
 sweep_resids <- simulateResiduals(bam_sweep_allvar)
 plot(sweep_resids)
 testResiduals(sweep_resids)
+dev.off()
+cat("Sweep Net diagnostics saved to: sweep_net_diagnostics.pdf\n")
 
 
 cat("\n============================\n")
@@ -756,14 +760,16 @@ create_abundance_plot <- function(data, method, method_name, color, model) {
       }
     )
   
-  # Save plot
+  # Save plot with wider dimensions
   plot_file <- file.path("plots", paste0(tolower(gsub(" ", "_", method_name)), "_abundance_time_series.png"))
+  if (!dir.exists("plots")) dir.create("plots")
   ggsave(
     filename = plot_file,
     plot = p,
-    width = 12,
-    height = 7,
-    dpi = 300
+    width = 16,      # Increased from 12 to 16 for wider plot
+    height = 8,      # Slightly increased height to maintain aspect ratio
+    dpi = 300,
+    units = "in"     # Explicitly set units to inches
   )
   
   return(p)

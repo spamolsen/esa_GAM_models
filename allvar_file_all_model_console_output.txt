@@ -1,0 +1,212 @@
+[1] "\nPan Trap Reduced Model Summary:\n"
+
+Family: Negative Binomial(1.571) 
+Link function: log 
+
+Formula:
+Pan_trap_abundance ~ s(days_since_origin_scaled, bs = "cr") + 
+    s(month, bs = "cc", k = 7) + s(year, bs = "re") + s(sample_date, 
+    bs = "re") + s(sample_site, bs = "re") + te(pu_temp_scaled, 
+    pd_temp_scaled, bs = c("cr", "cr"), k = c(5, 5)) + te(pu_humidity_scaled, 
+    pu_cloudcover_scaled, bs = c("cr", "cr"), k = c(6, 6)) + 
+    temp_diff_scaled + pu_windspeed_scaled + s(pu_dew, bs = "cr") + 
+    s(pu_pressure, bs = "cr", k = 3) + s(pu_visibility, bs = "cr", 
+    k = 3)
+
+Parametric coefficients:
+                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          2.691305   0.393484   6.840 2.37e-11 ***
+temp_diff_scaled    -0.112228   0.589580  -0.190    0.849    
+pu_windspeed_scaled  0.003042   0.110031   0.028    0.978    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                                                  edf Ref.df       F p-value
+s(days_since_origin_scaled)                 1.000e+00  1.000   4.415 0.03613
+s(month)                                    1.757e+00  5.000  48.860 0.86856
+s(year)                                     6.825e-10  1.000   0.000 0.67977
+s(sample_date)                              6.613e+01 96.000   6.399 0.89175
+s(sample_site)                              4.931e+00  6.000 103.108 < 2e-16
+te(pu_temp_scaled,pd_temp_scaled)           2.735e+00  2.847   7.668 0.00297
+te(pu_humidity_scaled,pu_cloudcover_scaled) 3.000e+00  3.000   1.606 0.18704
+s(pu_dew)                                   1.000e+00  1.000   0.235 0.62817
+s(pu_pressure)                              1.000e+00  1.000   2.791 0.09542
+s(pu_visibility)                            1.000e+00  1.000   1.503 0.22078
+                                               
+s(days_since_origin_scaled)                 *  
+s(month)                                       
+s(year)                                        
+s(sample_date)                                 
+s(sample_site)                              ***
+te(pu_temp_scaled,pd_temp_scaled)           ** 
+te(pu_humidity_scaled,pu_cloudcover_scaled)    
+s(pu_dew)                                      
+s(pu_pressure)                              .  
+s(pu_visibility)                               
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Rank: 191/192
+R-sq.(adj) =  0.342   Deviance explained = 62.7%
+fREML = 981.91  Scale est. = 1         n = 576
+[1] "\nSweep Net Model Summary:\n"
+
+Family: Negative Binomial(1.115) 
+Link function: log 
+
+Formula:
+Sweepnet_abundance ~ s(days_since_origin_scaled, bs = "cr") + 
+    s(month, bs = "cc", k = 7) + s(year, bs = "re") + s(sample_date, 
+    bs = "re") + s(sample_site, bs = "re") + te(pu_temp_scaled, 
+    pd_temp_scaled, bs = c("cr", "cr"), k = c(5, 5)) + te(pu_humidity_scaled, 
+    pu_cloudcover_scaled, bs = c("cr", "cr"), k = c(6, 6)) + 
+    temp_diff_scaled + pu_windspeed_scaled + s(pu_dew, bs = "cr") + 
+    s(pu_pressure, bs = "cr", k = 3) + s(pu_visibility, bs = "cr", 
+    k = 3)
+
+Parametric coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          1.87342    0.22957   8.161  2.4e-15 ***
+temp_diff_scaled     0.51923    0.39049   1.330    0.184    
+pu_windspeed_scaled -0.08466    0.06463  -1.310    0.191    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                                                  edf Ref.df      F  p-value
+s(days_since_origin_scaled)                 4.210e+00  4.918  4.867 0.000247
+s(month)                                    2.194e+00  5.000  4.257 0.117365
+s(year)                                     1.580e-09  1.000  0.000 0.907532
+s(sample_date)                              1.100e+01 96.000  0.143 0.998361
+s(sample_site)                              4.676e+00  6.000 12.139  < 2e-16
+te(pu_temp_scaled,pd_temp_scaled)           4.282e+00  4.988  3.972 0.002559
+te(pu_humidity_scaled,pu_cloudcover_scaled) 8.571e+00 10.665  1.912 0.036350
+s(pu_dew)                                   1.000e+00  1.000  0.189 0.663848
+s(pu_pressure)                              1.866e+00  1.954  3.583 0.022066
+s(pu_visibility)                            1.000e+00  1.000  0.263 0.608308
+                                               
+s(days_since_origin_scaled)                 ***
+s(month)                                       
+s(year)                                        
+s(sample_date)                                 
+s(sample_site)                              ***
+te(pu_temp_scaled,pd_temp_scaled)           ** 
+te(pu_humidity_scaled,pu_cloudcover_scaled) *  
+s(pu_dew)                                      
+s(pu_pressure)                              *  
+s(pu_visibility)                               
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Rank: 191/192
+R-sq.(adj) =  0.187   Deviance explained = 36.7%
+fREML = 907.94  Scale est. = 1         n = 576
+
+============================
+ICC and Likelihood Ratio Tests
+============================
+
+--- PAN TRAP ---
+ICC for Pan_trap_abundance by sample_site: 0.174
+ICC for Pan_trap_abundance by year: 0.013
+ICC for Pan_trap_abundance by month: 0.033
+Likelihood ratio test for sample_site (Pan_trap_abundance):
+Data: allvar_pan_data
+Models:
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data): Pan_trap_abundance ~ 1
+icc_model_pan_site: Pan_trap_abundance ~ 1 + (1 | sample_site)
+                                                   npar    AIC    BIC  logLik
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)    2 5888.7 5897.4 -2942.3
+icc_model_pan_site                                    3 5815.7 5828.7 -2904.8
+                                                   -2*log(L)  Chisq Df
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)    5884.7          
+icc_model_pan_site                                    5809.7 74.977  1
+                                                   Pr(>Chisq)    
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)               
+icc_model_pan_site                                  < 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Likelihood ratio test for year (Pan_trap_abundance):
+Data: allvar_pan_data
+Models:
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data): Pan_trap_abundance ~ 1
+icc_model_pan_year: Pan_trap_abundance ~ 1 + (1 | year)
+                                                   npar    AIC    BIC  logLik
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)    2 5888.7 5897.4 -2942.3
+icc_model_pan_year                                    3 5889.3 5902.3 -2941.6
+                                                   -2*log(L) Chisq Df
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)    5884.7         
+icc_model_pan_year                                    5883.3 1.395  1
+                                                   Pr(>Chisq)
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)           
+icc_model_pan_year                                     0.2376
+Likelihood ratio test for month (Pan_trap_abundance):
+Data: allvar_pan_data
+Models:
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data): Pan_trap_abundance ~ 1
+icc_model_pan_month: Pan_trap_abundance ~ 1 + (1 | month)
+                                                   npar    AIC    BIC  logLik
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)    2 5888.7 5897.4 -2942.3
+icc_model_pan_month                                   3 5884.5 5897.5 -2939.2
+                                                   -2*log(L)  Chisq Df
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)    5884.7          
+icc_model_pan_month                                   5878.5 6.1816  1
+                                                   Pr(>Chisq)  
+lm(Pan_trap_abundance ~ 1, data = allvar_pan_data)             
+icc_model_pan_month                                   0.01291 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+--- SWEEP NET ---
+ICC for Sweepnet_abundance by sample_site: 0.084
+ICC for Sweepnet_abundance by year: 0.023
+ICC for Sweepnet_abundance by month: 0.154
+Likelihood ratio test for sample_site (Sweepnet_abundance):
+Data: allvar_sweep_data
+Models:
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data): Sweepnet_abundance ~ 1
+icc_model_sweep_site: Sweepnet_abundance ~ 1 + (1 | sample_site)
+                                                     npar    AIC    BIC  logLik
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)    2 4571.4 4580.1 -2283.7
+icc_model_sweep_site                                    3 4544.3 4557.3 -2269.1
+                                                     -2*log(L)  Chisq Df
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)    4567.4          
+icc_model_sweep_site                                    4538.3 29.098  1
+                                                     Pr(>Chisq)    
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)               
+icc_model_sweep_site                                  6.881e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Likelihood ratio test for year (Sweepnet_abundance):
+Data: allvar_sweep_data
+Models:
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data): Sweepnet_abundance ~ 1
+icc_model_sweep_year: Sweepnet_abundance ~ 1 + (1 | year)
+                                                     npar    AIC    BIC  logLik
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)    2 4571.4 4580.1 -2283.7
+icc_model_sweep_year                                    3 4569.1 4582.2 -2281.6
+                                                     -2*log(L)  Chisq Df
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)    4567.4          
+icc_model_sweep_year                                    4563.1 4.2334  1
+                                                     Pr(>Chisq)  
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)             
+icc_model_sweep_year                                    0.03964 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+Likelihood ratio test for month (Sweepnet_abundance):
+Data: allvar_sweep_data
+Models:
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data): Sweepnet_abundance ~ 1
+icc_model_sweep_month: Sweepnet_abundance ~ 1 + (1 | month)
+                                                     npar    AIC    BIC  logLik
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)    2 4571.4 4580.1 -2283.7
+icc_model_sweep_month                                   3 4521.3 4534.4 -2257.7
+                                                     -2*log(L)  Chisq Df
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)    4567.4          
+icc_model_sweep_month                                   4515.3 52.042  1
+                                                     Pr(>Chisq)    
+lm(Sweepnet_abundance ~ 1, data = allvar_sweep_data)               
+icc_model_sweep_month                                 5.433e-13 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
